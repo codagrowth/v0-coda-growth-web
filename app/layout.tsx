@@ -17,8 +17,8 @@ const roboto = Roboto({
 })
 
 export const metadata: Metadata = {
-  title: 'CODA GROWTH | AI Automation & B2B SaaS Consultancy',
-  description: 'Scale your SaaS with AI & Automation. Get the free AI Marketing Guide and learn the systems top SaaS companies use to grow revenue on autopilot.',
+  title: 'CODA GROWTH | AI Automation & B2B Efficiency & Automation Consultancy',
+  description: 'Scale your Revenue Systems with AI & Automation. Get the free AI Marketing Guide and learn the systems top SaaS companies use to grow revenue on autopilot.',
   generator: 'v0.app',
   icons: {
     icon: [

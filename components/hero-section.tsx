@@ -43,13 +43,13 @@ export function HeroSection() {
               className="text-4xl font-black leading-[1.1] tracking-tight text-balance text-[#F5F7FA] md:text-5xl lg:text-6xl"
               style={{ fontFamily: "Inter, sans-serif" }}
             >
-              Scale Your SaaS with{" "}
+              Scale Your Revenue Systems with{" "}
               <span className="text-[#00D1C1]">AI &amp; Automation.</span>
             </h1>
 
             {/* Subheadline */}
             <p className="text-lg leading-relaxed text-[#BFE2DC] max-w-lg" style={{ fontFamily: "Roboto, sans-serif" }}>
-              Stop leaving revenue on the table. We install done-for-you AI systems that generate leads, nurture prospects, and close deals while you sleep.
+              Eliminate operational bottlenecks with AI-driven infrastructure and automated revenue systems.
             </p>
 
             {/* Social proof micro-stats */}
