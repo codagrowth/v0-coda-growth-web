@@ -1,0 +1,120 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* CODA GROWTH – Midnight Blue dark-mode design system */
+  --background: #132A4A;
+  --foreground: #F5F7FA;
+  --card: #1a3559;
+  --card-foreground: #F5F7FA;
+  --popover: #1a3559;
+  --popover-foreground: #F5F7FA;
+  --primary: #00D1C1;
+  --primary-foreground: #132A4A;
+  --secondary: #429E93;
+  --secondary-foreground: #F5F7FA;
+  --muted: #1e3f62;
+  --muted-foreground: #BFE2DC;
+  --accent: #04C3B3;
+  --accent-foreground: #132A4A;
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: #F5F7FA;
+  --border: #1e3f62;
+  --input: #1e3f62;
+  --ring: #32CEC0;
+  --radius: 0.625rem;
+
+  /* Brand-specific tokens */
+  --coda-midnight: #132A4A;
+  --coda-teal-electric: #00D1C1;
+  --coda-teal-primary: #04C3B3;
+  --coda-teal-secondary: #32CEC0;
+  --coda-teal-foundation: #429E93;
+  --coda-teal-soft: #BFE2DC;
+  --coda-light-gray: #F5F7FA;
+  --coda-green-accent: #2DFF8F;
+  --coda-orange: #FF6B35;
+
+  --sidebar: #0e2239;
+  --sidebar-foreground: #F5F7FA;
+  --sidebar-primary: #00D1C1;
+  --sidebar-primary-foreground: #132A4A;
+  --sidebar-accent: #1a3559;
+  --sidebar-accent-foreground: #F5F7FA;
+  --sidebar-border: #1e3f62;
+  --sidebar-ring: #32CEC0;
+}
+
+@theme inline {
+  --font-sans: 'Inter', 'Inter Fallback', sans-serif;
+  --font-body: 'Roboto', 'Roboto Fallback', sans-serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Brand color utilities */
+  --color-coda-midnight: var(--coda-midnight);
+  --color-coda-teal-electric: var(--coda-teal-electric);
+  --color-coda-teal-primary: var(--coda-teal-primary);
+  --color-coda-teal-secondary: var(--coda-teal-secondary);
+  --color-coda-teal-foundation: var(--coda-teal-foundation);
+  --color-coda-teal-soft: var(--coda-teal-soft);
+  --color-coda-light-gray: var(--coda-light-gray);
+  --color-coda-green: var(--coda-green-accent);
+  --color-coda-orange: var(--coda-orange);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Roboto', sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+/* Marquee animation */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+}
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
