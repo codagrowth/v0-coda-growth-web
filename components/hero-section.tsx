@@ -78,7 +78,7 @@ export function HeroSection() {
                 className="mb-2 text-2xl font-bold text-[#F5F7FA] leading-snug"
                 style={{ fontFamily: "Inter, sans-serif" }}
               >
-                The Free AI Marketing Guide
+                Get FREE Guide
               </h2>
               <p className="mb-6 text-sm text-[#BFE2DC] leading-relaxed">
                 The exact AI stack top B2B SaaS companies use to generate 3x more pipeline in 90 days.
