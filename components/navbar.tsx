@@ -2,7 +2,6 @@
 
 import { useState } from "react"
 import { Menu, X } from "lucide-react"
-import Image from "next/image"
 
 export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
@@ -12,14 +11,10 @@ export function Navbar() {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         {/* Logo */}
         <a href="#" className="flex items-center group">
-          <Image
+          <img
             src="/coda-growth-logo.png"
             alt="CODA GROWTH"
-            width={192}
-            height={58}
             className="h-[3.6rem] w-auto"
-            style={{ width: "auto" }}
-            priority
           />
         </a>
 
