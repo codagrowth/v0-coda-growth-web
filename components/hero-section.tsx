@@ -60,7 +60,7 @@ export function HeroSection() {
                 className="text-2xl font-black text-[#F5F7FA] mb-2"
                 style={{ fontFamily: "Inter, sans-serif" }}
               >
-                Get your FREE AI Automation SOP.
+                Get Your Free AI Automation SOP
               </h2>
 
               {/* Card description */}
