@@ -49,7 +49,7 @@ export function HeroSection() {
 
             {/* Subheadline */}
             <p className="text-lg leading-relaxed text-[#BFE2DC] max-w-lg" style={{ fontFamily: "Roboto, sans-serif" }}>
-              {"Stop leaving revenue on the table. We install done-for-you AI systems that generate leads, nurture prospects, and close deals \u2014 while you sleep."}
+              {"Stop leaving revenue on the table. We install done-for-you AI systems that generate leads, nurture prospects, and close deals while you sleep."}
             </p>
 
             {/* Social proof micro-stats */}
@@ -71,7 +71,7 @@ export function HeroSection() {
               {/* Card badge */}
               <div className="mb-5 inline-flex items-center gap-2 rounded-full bg-[#00D1C1]/15 px-3 py-1">
                 <span className="h-1.5 w-1.5 rounded-full bg-[#2DFF8F] animate-pulse" />
-                <span className="text-xs font-semibold text-[#2DFF8F]">{`FREE \u2014 Limited Time`}</span>
+                <span className="text-xs font-semibold text-[#2DFF8F]">FREE - Limited Time</span>
               </div>
 
               <h2
