@@ -20,7 +20,8 @@ export function HeroSection() {
 
             {/* Subheadline */}
             <p className="mt-6 text-lg leading-relaxed text-[#BFE2DC] max-w-lg" style={{ fontFamily: "Roboto, sans-serif" }}>
-              Stop leaving revenue on the table. We install done-for-you AI systems that generate leads, nurture prospects, and close deals &ndash; while you sleep.
+              Eliminate operational bottlenecks with AI-driven infrastructure and automated revenue systems.
+              We install done-for-you AI systems that generate leads, nurture prospects, and close deals while you sleep.
             </p>
 
             {/* Social proof micro stats */}
@@ -59,7 +60,7 @@ export function HeroSection() {
                 className="text-2xl font-black text-[#F5F7FA] mb-2"
                 style={{ fontFamily: "Inter, sans-serif" }}
               >
-                Get Your Free AI Marketing Guide
+                Get your FREE AI Automation SOP.
               </h2>
 
               {/* Card description */}
