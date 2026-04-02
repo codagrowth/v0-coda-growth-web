@@ -61,7 +61,7 @@ export function LeadCapture() {
             </h2>
 
             <p className="text-base text-[#BFE2DC] leading-relaxed">
-              Every subscriber gets instant access to the AI Marketing Guide <em>plus</em> this exclusive bonus bundle — free, for a limited time.
+              Every subscriber gets instant access to the AI Marketing Guide <em>plus</em> this exclusive bonus bundle, free for a limited time.
             </p>
 
             {/* Bonus cards */}
@@ -156,7 +156,7 @@ export function LeadCapture() {
                       Awesome! You&apos;re all set.
                     </p>
                     <p className="text-center text-sm text-[#BFE2DC]">
-                      Check <strong className="text-[#F5F7FA]">{email}</strong> — your guide and bonuses are on the way.
+                      Check <strong className="text-[#F5F7FA]">{email}</strong> - your guide and bonuses are on the way.
                     </p>
                   </div>
                 )}

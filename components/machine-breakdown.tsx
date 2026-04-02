@@ -6,7 +6,7 @@ const services = [
     title: "AI Automation",
     tagline: "Put your growth on autopilot.",
     description:
-      "We architect and deploy end-to-end AI workflows that handle prospecting, qualification, nurturing, and follow-up — so your team focuses only on closing.",
+      "We architect and deploy end-to-end AI workflows that handle prospecting, qualification, nurturing, and follow-up so your team focuses only on closing.",
     features: [
       "AI-powered outbound sequences",
       "Lead scoring & enrichment",

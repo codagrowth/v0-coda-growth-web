@@ -18,7 +18,7 @@ export function VideoDemo() {
           </p>
         </div>
 
-        {/* Video container — framed with foundation teal */}
+        {/* Video container - framed with foundation teal */}
         <div
           className="relative rounded-xl overflow-hidden"
           style={{
