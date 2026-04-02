@@ -49,7 +49,7 @@ export function HeroSection() {
 
             {/* Subheadline */}
             <p className="text-lg leading-relaxed text-[#BFE2DC] max-w-lg" style={{ fontFamily: "Roboto, sans-serif" }}>
-              Stop leaving revenue on the table. We install done-for-you AI systems that generate leads, nurture prospects, and close deals while you sleep.
+              Stop leaving revenue on the table. We install done-for-you AI systems that generate leads, nurture prospects, and close deals while you sleep during off hours.
             </p>
 
             {/* Social proof micro-stats */}

@@ -8,7 +8,7 @@ export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 border-b border-[#1e3f62] bg-[#1a1a1a]/90 backdrop-blur-md">
+    <header className="fixed top-0 left-0 right-0 z-50 border-b border-[#191818] bg-[#1a1a1a]/90 backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         {/* Logo */}
         <a href="#" className="flex items-center group">
@@ -18,6 +18,7 @@ export function Navbar() {
             width={192}
             height={58}
             className="h-[3.6rem] w-auto"
+            style={{ width: "auto" }}
             priority
           />
         </a>
@@ -57,7 +58,7 @@ export function Navbar() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="md:hidden border-t border-[#1e3f62] bg-[#1a1a1a] px-6 py-4 flex flex-col gap-4">
+        <div className="md:hidden border-t border-[#191818] bg-[#1a1a1a] px-6 py-4 flex flex-col gap-4">
           <a
             href="#machine"
             className="text-sm font-medium text-[#BFE2DC] hover:text-[#00D1C1] transition-colors"
