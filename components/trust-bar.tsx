@@ -60,7 +60,18 @@ export function TrustBar() {
         </svg>
       ),
     },
+    {
+      name: "AdCreative",
+      svg: (
+        <svg viewBox="0 0 70 32" className="h-6 w-auto fill-current" aria-label="Make">
+          <text x="0" y="24" fontSize="22" fontWeight="700" fontFamily="Inter, sans-serif" letterSpacing="-0.5">
+            AdCreative
+          </text>
+        </svg>
+      ),
+    },
   ]
+
 
   // Duplicate logos for seamless loop
   const allLogos = [...logos, ...logos]
