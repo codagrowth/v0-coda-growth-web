@@ -7,7 +7,7 @@ export function HeroSection() {
     <section className="relative overflow-hidden pt-32 pb-20 px-6 md:pt-40 lg:pt-48">
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-8 items-center">
-          {/* Left column: Headline + Subheadline + CTA + Social proof */}
+          {/* Left column: Headline and Subheadline and CTA and Social proof */}
           <div>
             {/* Headline */}
             <h1
@@ -20,10 +20,10 @@ export function HeroSection() {
 
             {/* Subheadline */}
             <p className="mt-6 text-lg leading-relaxed text-[#BFE2DC] max-w-lg" style={{ fontFamily: "Roboto, sans-serif" }}>
-              Eliminate operational bottlenecks with AI-driven infrastructure and automated revenue systems.
+              Stop leaving revenue on the table. We install AI systems that generate leads, nurture prospects, and close deals while you sleep.
             </p>
 
-            {/* Social proof micro-stats */}
+            {/* Social proof micro stats */}
             <div className="mt-8 flex flex-wrap gap-6 text-sm text-[#BFE2DC]">
               <div className="flex items-center gap-1.5">
                 <TrendingUp className="h-4 w-4 text-[#2DFF8F]" />

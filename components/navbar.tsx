@@ -14,7 +14,7 @@ export function Navbar() {
           <img
             src="/coda-growth-logo.png"
             alt="CODA GROWTH"
-            className="h-[3.6rem] w-auto"
+            className="h-[3.78rem] w-auto"
           />
         </a>
 
