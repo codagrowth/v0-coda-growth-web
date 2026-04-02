@@ -15,10 +15,9 @@ export function Navbar() {
           <Image
             src="/coda-growth-logo.png"
             alt="CODA GROWTH"
-            width={160}
-            height={48}
-            className="h-12 w-auto"
-            style={{ width: "auto", height: "100%" }}
+            width={192}
+            height={58}
+            className="h-[3.6rem] w-auto"
             priority
           />
         </a>
