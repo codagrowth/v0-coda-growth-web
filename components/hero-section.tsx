@@ -78,7 +78,7 @@ export function HeroSection() {
                 className="mb-2 text-2xl font-bold text-[#F5F7FA] leading-snug"
                 style={{ fontFamily: "Inter, sans-serif" }}
               >
-                Get FREE Guide
+                The Free AI Marketing Guide
               </h2>
               <p className="mb-6 text-sm text-[#BFE2DC] leading-relaxed">
                 The exact AI stack top B2B SaaS companies use to generate 3x more pipeline in 90 days.
@@ -99,7 +99,7 @@ export function HeroSection() {
                     className="group flex w-full items-center justify-center gap-2 rounded-lg bg-[#00D1C1] px-6 py-3.5 text-sm font-bold text-[#132A4A] hover:bg-[#04C3B3] active:scale-[0.98] transition-all duration-150"
                     style={{ fontFamily: "Inter, sans-serif" }}
                   >
-                    Get the Free AI Marketing Guide
+                    Get your FREE Guide
                     <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </button>
                   <p className="text-center text-xs text-[#BFE2DC]/60">
