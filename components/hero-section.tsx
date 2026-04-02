@@ -7,42 +7,8 @@ export function HeroSection() {
     <section className="relative overflow-hidden pt-32 pb-20 px-6 md:pt-40 lg:pt-48">
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-8 items-center">
-          {/* Left column: Headline and Subheadline and CTA and Social proof */}
-          <div>
-            {/* Headline */}
-            <h1
-              className="text-4xl font-black leading-[1.1] tracking-tight text-balance text-[#F5F7FA] md:text-5xl lg:text-6xl"
-              style={{ fontFamily: "Inter, sans-serif" }}
-            >
-              Scale Your Revenue Systems with{" "}
-              <span className="text-[#00D1C1]">AI and Automation.</span>
-            </h1>
-
-            {/* Subheadline */}
-            <p className="mt-6 text-lg leading-relaxed text-[#BFE2DC] max-w-lg" style={{ fontFamily: "Roboto, sans-serif" }}>
-              Eliminate operational bottlenecks with AI-driven infrastructure and automated revenue systems.
-              We install done-for-you AI systems that generate leads, nurture prospects, and close deals while you sleep.
-            </p>
-
-            {/* Social proof micro stats */}
-            <div className="mt-8 flex flex-wrap gap-6 text-sm text-[#BFE2DC]">
-              <div className="flex items-center gap-1.5">
-                <TrendingUp className="h-4 w-4 text-[#2DFF8F]" />
-                <span>3x Revenue Growth</span>
-              </div>
-              <div className="flex items-center gap-1.5">
-                <Zap className="h-4 w-4 text-[#2DFF8F]" />
-                <span>40% Time Savings</span>
-              </div>
-              <div className="flex items-center gap-1.5">
-                <Users className="h-4 w-4 text-[#2DFF8F]" />
-                <span>200+ Companies</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Right column: Lead capture card */}
-          <div className="flex justify-center lg:justify-end">
+          {/* Left column: Lead capture card */}
+          <div className="flex justify-center lg:justify-start">
             <div
               className="relative w-full max-w-sm rounded-2xl border border-[#04C3B3]/40 bg-gradient-to-br from-[#1a3559] to-[#0f1f2e] p-8 shadow-2xl"
               style={{
@@ -88,6 +54,40 @@ export function HeroSection() {
               <p className="mt-4 text-xs text-[#BFE2DC] text-center opacity-80">
                 Join 5000+ founders getting weekly growth insights
               </p>
+            </div>
+          </div>
+
+          {/* Right column: Headline, Subheadline, and Social proof */}
+          <div>
+            {/* Headline */}
+            <h1
+              className="text-4xl font-black leading-[1.1] tracking-tight text-balance text-[#F5F7FA] md:text-5xl lg:text-6xl"
+              style={{ fontFamily: "Inter, sans-serif" }}
+            >
+              Scale Your Revenue Systems with{" "}
+              <span className="text-[#00D1C1]">AI and Automation.</span>
+            </h1>
+
+            {/* Subheadline */}
+            <p className="mt-6 text-lg leading-relaxed text-[#BFE2DC] max-w-lg" style={{ fontFamily: "Roboto, sans-serif" }}>
+              Eliminate operational bottlenecks with AI-driven infrastructure and automated revenue systems.
+              We install done-for-you AI systems that generate leads, nurture prospects, and close deals while you sleep.
+            </p>
+
+            {/* Social proof micro stats */}
+            <div className="mt-8 flex flex-wrap gap-6 text-sm text-[#BFE2DC]">
+              <div className="flex items-center gap-1.5">
+                <TrendingUp className="h-4 w-4 text-[#2DFF8F]" />
+                <span>3x Revenue Growth</span>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <Zap className="h-4 w-4 text-[#2DFF8F]" />
+                <span>40% Time Savings</span>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <Users className="h-4 w-4 text-[#2DFF8F]" />
+                <span>200+ Companies</span>
+              </div>
             </div>
           </div>
         </div>
