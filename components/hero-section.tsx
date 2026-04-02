@@ -78,7 +78,7 @@ export function HeroSection() {
                 className="mb-2 text-2xl font-bold text-[#F5F7FA] leading-snug"
                 style={{ fontFamily: "Inter, sans-serif" }}
               >
-                The Free AI Marketing Guide
+                Download the AI Automation SOP
               </h2>
               <p className="mb-6 text-sm text-[#BFE2DC] leading-relaxed">
                 The exact AI stack top B2B SaaS companies use to generate 3x more pipeline in 90 days.
@@ -89,7 +89,7 @@ export function HeroSection() {
                   <input
                     type="email"
                     required
-                    placeholder="Enter your work email"
+                    placeholder="Enter your email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     className="w-full rounded-lg border border-[#1e3f62] bg-[#0e2239] px-4 py-3 text-sm text-[#F5F7FA] placeholder:text-[#BFE2DC]/50 focus:outline-none focus:border-[#00D1C1] focus:ring-1 focus:ring-[#00D1C1] transition-colors"
