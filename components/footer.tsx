@@ -1,5 +1,3 @@
-import { Zap } from "lucide-react"
-
 const footerLinks = [
   { label: "Contact Us", href: "#contact" },
   { label: "Customer Service", href: "#support" },
@@ -15,16 +13,12 @@ export function Footer() {
         {/* Top row: Logo + links */}
         <div className="flex flex-col items-center gap-8 md:flex-row md:justify-between">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2">
-            <div className="flex h-7 w-7 items-center justify-center rounded-md bg-[#132A4A]">
-              <Zap className="h-3.5 w-3.5 text-[#00D1C1]" strokeWidth={2.5} />
-            </div>
-            <span
-              className="text-base font-black tracking-tight text-slate-900"
-              style={{ fontFamily: "Inter, sans-serif", letterSpacing: "-0.02em" }}
-            >
-              CODA <span className="text-[#04C3B3]">GROWTH</span>
-            </span>
+          <a href="#" className="flex items-center">
+            <img
+              src="/coda-growth-logo-footer.png"
+              alt="CODA GROWTH"
+              className="h-8 w-auto"
+            />
           </a>
 
           {/* Footer nav */}
