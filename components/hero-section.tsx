@@ -2,6 +2,8 @@
 
 import { TrendingUp, Users, Zap } from "lucide-react"
 
+<meta name="zoho-site-verification" content="your-code-here" />
+
 export function HeroSection() {
   return (
     <section className="relative overflow-hidden pt-32 pb-20 px-6 md:pt-40 lg:pt-48">
