@@ -2,7 +2,7 @@
 
 import { TrendingUp, Users, Zap } from "lucide-react"
 
-<meta name="zoho-site-verification" content="your-code-here" />
+<meta name="zoho-site-verification" content="19157297" />
 
 export function HeroSection() {
   return (
