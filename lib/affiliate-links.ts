@@ -4,82 +4,64 @@ export interface AffiliateLink {
   slug: string
   prettyUrl: string
   destinationUrl: string
-  category: string
-  description: string
 }
 
 export const affiliateLinks: AffiliateLink[] = [
   {
     id: "1",
-    name: "HubSpot",
-    slug: "hubspot",
-    prettyUrl: "/go/hubspot",
-    destinationUrl: "https://www.hubspot.com/?utm_source=codagrowth&utm_medium=affiliate&utm_campaign=partner",
-    category: "CRM & Marketing",
-    description: "All-in-one CRM, marketing, sales, and service platform"
+    name: "adcreative",
+    slug: "adcreative",
+    prettyUrl: "/go/adcreative",
+    destinationUrl: "https://free-trial.adcreative.ai/yux16osy6mo1"
   },
   {
     id: "2",
-    name: "Zapier",
-    slug: "zapier",
-    prettyUrl: "/go/zapier",
-    destinationUrl: "https://zapier.com/?utm_source=codagrowth&utm_medium=affiliate&utm_campaign=partner",
-    category: "Automation",
-    description: "Connect apps and automate workflows"
+    name: "GoHighLevel1",
+    slug: "GoHighLevel1",
+    prettyUrl: "/go/gohighlevel1",
+    destinationUrl: "https://gohighlevel.com/annual?fp_ref=ghl-codagrowth&_gl=1*89u0oj*_gcl_au*NDg3NTYwOTA1LjE3NzUyMzk1NTkuOTMzODA1OTQ1LjE3NzU1ODU2NzMuMTc3NTU4NTY3NA..*_ga*MjA2NjM4MTU1LjE3NzUyMzk1NTk.*_ga_HSZW8WNR22*czE3NzU1ODU2NjUkbzUkZzEkdDE3NzU1ODU3MDUkajIwJGwwJGgw"
   },
   {
     id: "3",
-    name: "Notion",
-    slug: "notion",
-    prettyUrl: "/go/notion",
-    destinationUrl: "https://affiliate.notion.so/codagrowth?utm_source=codagrowth&utm_medium=affiliate",
-    category: "Productivity",
-    description: "All-in-one workspace for notes, docs, and collaboration"
+    name: "GoHighLevel2",
+    slug: "GoHighLevel2",
+    prettyUrl: "/go/gohighlevel2",
+    destinationUrl: "https://www.gohighlevel.com/protrial?fp_ref=ghl-codagrowth"
   },
   {
     id: "4",
-    name: "Airtable",
-    slug: "airtable",
-    prettyUrl: "/go/airtable",
-    destinationUrl: "https://airtable.com/invite/r/codagrowth?utm_source=codagrowth&utm_medium=affiliate",
-    category: "Database",
-    description: "Spreadsheet-database hybrid for organizing anything"
+    name: "Beehiiv",
+    slug: "Beehiiv",
+    prettyUrl: "/go/beehiiv",
+    destinationUrl: "https://www.beehiiv.com/?via=xn--Andrea-Marc-0eb"
   },
   {
     id: "5",
     name: "Make",
     slug: "make",
     prettyUrl: "/go/make",
-    destinationUrl: "https://www.make.com/en/register?pc=codagrowth&utm_source=codagrowth&utm_medium=affiliate",
-    category: "Automation",
-    description: "Visual platform for building automated workflows"
+    destinationUrl: "https://www.make.com/en/register?pc=codagrowth&utm_source=codagrowth&utm_medium=affiliate"
   },
   {
     id: "6",
     name: "Slack",
     slug: "slack",
     prettyUrl: "/go/slack",
-    destinationUrl: "https://slack.com/partners/codagrowth?utm_source=codagrowth&utm_medium=affiliate",
-    category: "Communication",
-    description: "Business messaging and collaboration platform"
+    destinationUrl: "https://slack.com/partners/codagrowth?utm_source=codagrowth&utm_medium=affiliate"
   },
   {
     id: "7",
     name: "Monday.com",
     slug: "monday",
     prettyUrl: "/go/monday",
-    destinationUrl: "https://monday.com/?utm_source=codagrowth&utm_medium=affiliate&utm_campaign=partner",
-    category: "Project Management",
-    description: "Work OS for teams to manage projects and workflows"
+    destinationUrl: "https://monday.com/?utm_source=codagrowth&utm_medium=affiliate&utm_campaign=partner"
   },
   {
     id: "8",
     name: "Calendly",
     slug: "calendly",
     prettyUrl: "/go/calendly",
-    destinationUrl: "https://calendly.com/?utm_source=codagrowth&utm_medium=affiliate&utm_campaign=partner",
-    category: "Scheduling",
-    description: "Automated scheduling and appointment booking"
+    destinationUrl: "https://calendly.com/?utm_source=codagrowth&utm_medium=affiliate&utm_campaign=partner"
   },
   {
     id: "9",
@@ -96,8 +78,6 @@ export const affiliateLinks: AffiliateLink[] = [
     slug: "mailchimp",
     prettyUrl: "/go/mailchimp",
     destinationUrl: "https://mailchimp.com/?utm_source=codagrowth&utm_medium=affiliate&utm_campaign=partner",
-    category: "Email Marketing",
-    description: "Email marketing and automation platform"
   }
 ]
 
