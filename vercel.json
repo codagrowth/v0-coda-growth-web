@@ -1,0 +1,65 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "rewrites": [
+    {
+      "source": "/tool",
+      "destination": "/tools/marketing-automation"
+    },
+    {
+      "source": "/tool/:path*",
+      "destination": "/tools/:path*"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/go/hubspot",
+      "destination": "https://www.hubspot.com/?utm_source=codagrowth&utm_medium=affiliate&utm_campaign=partner",
+      "permanent": true
+    },
+    {
+      "source": "/go/zapier",
+      "destination": "https://zapier.com/?utm_source=codagrowth&utm_medium=affiliate&utm_campaign=partner",
+      "permanent": true
+    },
+    {
+      "source": "/go/notion",
+      "destination": "https://affiliate.notion.so/codagrowth?utm_source=codagrowth&utm_medium=affiliate",
+      "permanent": true
+    },
+    {
+      "source": "/go/airtable",
+      "destination": "https://airtable.com/invite/r/codagrowth?utm_source=codagrowth&utm_medium=affiliate",
+      "permanent": true
+    },
+    {
+      "source": "/go/make",
+      "destination": "https://www.make.com/en/register?pc=codagrowth&utm_source=codagrowth&utm_medium=affiliate",
+      "permanent": true
+    },
+    {
+      "source": "/go/slack",
+      "destination": "https://slack.com/partners/codagrowth?utm_source=codagrowth&utm_medium=affiliate",
+      "permanent": true
+    },
+    {
+      "source": "/go/monday",
+      "destination": "https://monday.com/?utm_source=codagrowth&utm_medium=affiliate&utm_campaign=partner",
+      "permanent": true
+    },
+    {
+      "source": "/go/calendly",
+      "destination": "https://calendly.com/?utm_source=codagrowth&utm_medium=affiliate&utm_campaign=partner",
+      "permanent": true
+    },
+    {
+      "source": "/go/typeform",
+      "destination": "https://www.typeform.com/?utm_source=codagrowth&utm_medium=affiliate&utm_campaign=partner",
+      "permanent": true
+    },
+    {
+      "source": "/go/mailchimp",
+      "destination": "https://mailchimp.com/?utm_source=codagrowth&utm_medium=affiliate&utm_campaign=partner",
+      "permanent": true
+    }
+  ]
+}
