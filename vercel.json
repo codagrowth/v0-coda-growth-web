@@ -1,0 +1,65 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "rewrites": [
+    {
+      "source": "/tool",
+      "destination": "/tools/marketing-automation"
+    },
+    {
+      "source": "/tool/:path*",
+      "destination": "/tools/:path*"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/go/adcreative",
+      "destination": "https://free-trial.adcreative.ai/yux16osy6mo1",
+      "permanent": false
+    },
+    {
+      "source": "/go/gohighlevel1",
+      "destination": "https://www.gohighlevel.com/annual?fp_ref=ghl-codagrowth&_gl=1*89u0oj*_gcl_au*NDg3NTYwOTA1LjE3NzUyMzk1NTkuOTMzODA1OTQ1LjE3NzU1ODU2NzMuMTc3NTU4NTY3NA..*_ga*MjA2NjM4MTU1LjE3NzUyMzk1NTk.*_ga_HSZW8WNR22*czE3NzU1ODU2NjUkbzUkZzEkdDE3NzU1ODU3MDUkajIwJGwwJGgw",
+      "permanent": false
+    },
+    {
+      "source": "/go/gohighlevel2",
+      "destination": "https://www.gohighlevel.com/protrial?fp_ref=ghl-codagrowth",
+      "permanent": false
+    },
+    {
+      "source": "/go/beehiiv",
+      "destination": "https://www.beehiiv.com/?via=xn--Andrea-Marc-0eb",
+      "permanent": false
+    },
+    {
+      "source": "/go/make",
+      "destination": "https://www.make.com/en/register?pc=codagrowth&utm_source=codagrowth&utm_medium=affiliate",
+      "permanent": false
+    },
+    {
+      "source": "/go/slack",
+      "destination": "https://slack.com/partners/codagrowth?utm_source=codagrowth&utm_medium=affiliate",
+      "permanent": false
+    },
+    {
+      "source": "/go/monday",
+      "destination": "https://monday.com/?utm_source=codagrowth&utm_medium=affiliate&utm_campaign=partner",
+      "permanent": false
+    },
+    {
+      "source": "/go/calendly",
+      "destination": "https://calendly.com/?utm_source=codagrowth&utm_medium=affiliate&utm_campaign=partner",
+      "permanent": false
+    },
+    {
+      "source": "/go/typeform",
+      "destination": "https://www.typeform.com/?utm_source=codagrowth&utm_medium=affiliate&utm_campaign=partner",
+      "permanent": false
+    },
+    {
+      "source": "/go/mailchimp",
+      "destination": "https://mailchimp.com/?utm_source=codagrowth&utm_medium=affiliate&utm_campaign=partner",
+      "permanent": false
+    }
+  ]
+}
