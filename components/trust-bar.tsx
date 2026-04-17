@@ -90,6 +90,16 @@ export function TrustBar() {
         </svg>
       ),
     },
+    {
+      name: "GoHighLevel",
+      svg: (
+        <svg viewBox="0 0 160 32" className="h-6 w-auto fill-current" aria-label="GoHighLevel">
+          <text x="0" y="24" fontSize="18" fontWeight="700" fontFamily="Inter, sans-serif" letterSpacing="-0.2">
+            GoHighLevel
+          </text>
+        </svg>
+      ),
+    },
   ]
 
 
