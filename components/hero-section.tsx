@@ -1,8 +1,63 @@
 "use client"
 
+import { useState } from "react"
+import { useRouter } from "next/navigation"
 import { TrendingUp, Users, Zap } from "lucide-react"
 
+// WEBHOOK URL - Replace with your Make webhook URL
+const WEBHOOK_URL = "MAKE_WEBHOOK_URL_HERE"
+
 export function HeroSection() {
+  const router = useRouter()
+  const [name, setName] = useState("")
+  const [email, setEmail] = useState("")
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [error, setError] = useState("")
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    setError("")
+    setIsSubmitting(true)
+
+    // Get honeypot value (spam prevention)
+    const formData = new FormData(e.currentTarget)
+    const honeypot = formData.get("website") as string
+
+    // If honeypot is filled, silently reject (bot detected)
+    if (honeypot) {
+      setIsSubmitting(false)
+      return
+    }
+
+    try {
+      const response = await fetch(WEBHOOK_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          website: honeypot,
+          source: "codagrowth.ai",
+        }),
+      })
+
+      if (!response.ok) {
+        throw new Error("Failed to submit form")
+      }
+
+      // Reset form and redirect to thank you page
+      setName("")
+      setEmail("")
+      router.push("/thank-you")
+    } catch {
+      setError("Something went wrong. Please try again.")
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
+
   return (
     <section className="relative overflow-hidden pt-32 pb-20 px-6 md:pt-40 lg:pt-48">
       <div className="mx-auto max-w-7xl">
@@ -18,7 +73,7 @@ export function HeroSection() {
               {/* Badge */}
               <div className="mb-5 inline-flex items-center gap-2 rounded-full bg-[#00D1C1]/15 px-3 py-1">
                 <span className="h-1.5 w-1.5 rounded-full bg-[#2DFF8F] animate-pulse" />
-                <span className="text-xs font-semibold text-[#2DFF8F]">FREE - Limited Time</span>
+                <span className="text-xs font-semibold text-[#2DFF8F]">Get instant access</span>
               </div>
 
               {/* Card headline */}
@@ -35,32 +90,51 @@ export function HeroSection() {
               </p>
 
               {/* Lead capture form */}
-              <form className="flex flex-col gap-4" onSubmit={(e) => { e.preventDefault(); }}>
+              <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
+                {/* Honeypot field for spam prevention - hidden from users */}
+                <input
+                  type="text"
+                  name="website"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  className="absolute opacity-0 pointer-events-none h-0 w-0"
+                  aria-hidden="true"
+                />
                 <input
                   type="text"
                   name="name"
                   placeholder="Enter your name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
                   className="w-full rounded-lg border border-[#1e3f62] bg-[#0f1f2e] px-4 py-3 text-sm text-[#F5F7FA] placeholder-[#429E93] focus:border-[#00D1C1] focus:outline-none focus:ring-1 focus:ring-[#00D1C1]/50"
                   required
+                  disabled={isSubmitting}
                 />
                 <input
                   type="email"
                   name="email"
                   placeholder="Enter your email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   className="w-full rounded-lg border border-[#1e3f62] bg-[#0f1f2e] px-4 py-3 text-sm text-[#F5F7FA] placeholder-[#429E93] focus:border-[#00D1C1] focus:outline-none focus:ring-1 focus:ring-[#00D1C1]/50"
                   required
+                  disabled={isSubmitting}
                 />
+                {error && (
+                  <p className="text-xs text-red-400 text-center">{error}</p>
+                )}
                 <button
                   type="submit"
-                  className="w-full rounded-lg bg-[#00D1C1] px-6 py-3 font-bold text-[#132A4A] hover:bg-[#04C3B3] transition-colors"
+                  disabled={isSubmitting}
+                  className="w-full rounded-lg bg-[#00D1C1] px-6 py-3.5 font-bold text-[#132A4A] hover:bg-[#04C3B3] transition-colors disabled:opacity-70 disabled:cursor-not-allowed"
                 >
-                  Send Me the Guide
+                  {isSubmitting ? "Sending..." : "Get the Free Guide"}
                 </button>
               </form>
 
               {/* Trust note */}
               <p className="mt-4 text-xs text-[#BFE2DC] text-center opacity-80">
-                Join 5000+ founders getting weekly growth insights
+                No spam. Just the guide + actionable insights.
               </p>
             </div>
           </div>
