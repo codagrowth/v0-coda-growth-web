@@ -47,7 +47,7 @@ export function LeadCapture() {
             <div className="inline-flex w-fit items-center gap-2 rounded-full border border-[#FF6B35]/30 bg-[#FF6B35]/10 px-4 py-1.5">
               <Gift className="h-3.5 w-3.5 text-[#FF6B35]" />
               <span className="text-xs font-semibold uppercase tracking-widest text-[#FF6B35]">
-                Free Bonus Bundle - $591 Value
+                <strong>FREE</strong> Bonus Bundle - $591 Value
               </span>
             </div>
 

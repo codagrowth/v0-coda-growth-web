@@ -34,10 +34,18 @@ export function HeroSection() {
                 Learn the exact frameworks and systems that top SaaS companies use to scale revenue on autopilot.
               </p>
 
-              {/* Email form */}
+              {/* Lead capture form */}
               <form className="flex flex-col gap-4" onSubmit={(e) => { e.preventDefault(); }}>
                 <input
+                  type="text"
+                  name="name"
+                  placeholder="Enter your name"
+                  className="w-full rounded-lg border border-[#1e3f62] bg-[#0f1f2e] px-4 py-3 text-sm text-[#F5F7FA] placeholder-[#429E93] focus:border-[#00D1C1] focus:outline-none focus:ring-1 focus:ring-[#00D1C1]/50"
+                  required
+                />
+                <input
                   type="email"
+                  name="email"
                   placeholder="Enter your email"
                   className="w-full rounded-lg border border-[#1e3f62] bg-[#0f1f2e] px-4 py-3 text-sm text-[#F5F7FA] placeholder-[#429E93] focus:border-[#00D1C1] focus:outline-none focus:ring-1 focus:ring-[#00D1C1]/50"
                   required
