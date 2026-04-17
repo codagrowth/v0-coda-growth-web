@@ -1,51 +1,31 @@
 export function TrustBar() {
   const logos = [
     {
-      name: "HubSpot",
-      svg: (
-        <svg viewBox="0 0 120 32" className="h-6 w-auto fill-current" aria-label="HubSpot">
-          <text x="0" y="24" fontSize="22" fontWeight="700" fontFamily="Inter, sans-serif" letterSpacing="-0.5">
-            HubSpot
-          </text>
-        </svg>
-      ),
-    },
-    {
-      name: "PartnerStack",
-      svg: (
-        <svg viewBox="0 0 160 32" className="h-6 w-auto fill-current" aria-label="PartnerStack">
-          <text x="0" y="24" fontSize="20" fontWeight="700" fontFamily="Inter, sans-serif" letterSpacing="-0.3">
-            PartnerStack
-          </text>
-        </svg>
-      ),
-    },
-    {
-      name: "Zapier",
-      svg: (
-        <svg viewBox="0 0 90 32" className="h-6 w-auto fill-current" aria-label="Zapier">
-          <text x="0" y="24" fontSize="22" fontWeight="700" fontFamily="Inter, sans-serif" letterSpacing="-0.5">
-            Zapier
-          </text>
-        </svg>
-      ),
-    },
-    {
-      name: "Salesforce",
-      svg: (
-        <svg viewBox="0 0 140 32" className="h-6 w-auto fill-current" aria-label="Salesforce">
-          <text x="0" y="24" fontSize="20" fontWeight="700" fontFamily="Inter, sans-serif" letterSpacing="-0.3">
-            Salesforce
-          </text>
-        </svg>
-      ),
-    },
-    {
       name: "ActiveCampaign",
       svg: (
         <svg viewBox="0 0 190 32" className="h-6 w-auto fill-current" aria-label="ActiveCampaign">
           <text x="0" y="24" fontSize="18" fontWeight="700" fontFamily="Inter, sans-serif" letterSpacing="-0.2">
             ActiveCampaign
+          </text>
+        </svg>
+      ),
+    },
+    {
+      name: "GitHub",
+      svg: (
+        <svg viewBox="0 0 100 32" className="h-6 w-auto fill-current" aria-label="GitHub">
+          <text x="0" y="24" fontSize="22" fontWeight="700" fontFamily="Inter, sans-serif" letterSpacing="-0.5">
+            GitHub
+          </text>
+        </svg>
+      ),
+    },
+    {
+      name: "HubSpot",
+      svg: (
+        <svg viewBox="0 0 120 32" className="h-6 w-auto fill-current" aria-label="HubSpot">
+          <text x="0" y="24" fontSize="22" fontWeight="700" fontFamily="Inter, sans-serif" letterSpacing="-0.5">
+            HubSpot
           </text>
         </svg>
       ),
@@ -63,9 +43,49 @@ export function TrustBar() {
     {
       name: "AdCreative",
       svg: (
-        <svg viewBox="0 0 70 32" className="h-6 w-auto fill-current" aria-label="Make">
-          <text x="0" y="24" fontSize="22" fontWeight="700" fontFamily="Inter, sans-serif" letterSpacing="-0.5">
+        <svg viewBox="0 0 140 32" className="h-6 w-auto fill-current" aria-label="AdCreative">
+          <text x="0" y="24" fontSize="20" fontWeight="700" fontFamily="Inter, sans-serif" letterSpacing="-0.3">
             AdCreative
+          </text>
+        </svg>
+      ),
+    },
+    {
+      name: "Zapier",
+      svg: (
+        <svg viewBox="0 0 90 32" className="h-6 w-auto fill-current" aria-label="Zapier">
+          <text x="0" y="24" fontSize="22" fontWeight="700" fontFamily="Inter, sans-serif" letterSpacing="-0.5">
+            Zapier
+          </text>
+        </svg>
+      ),
+    },
+    {
+      name: "Gamma",
+      svg: (
+        <svg viewBox="0 0 100 32" className="h-6 w-auto fill-current" aria-label="Gamma">
+          <text x="0" y="24" fontSize="22" fontWeight="700" fontFamily="Inter, sans-serif" letterSpacing="-0.5">
+            Gamma
+          </text>
+        </svg>
+      ),
+    },
+    {
+      name: "BeeHiiv",
+      svg: (
+        <svg viewBox="0 0 100 32" className="h-6 w-auto fill-current" aria-label="BeeHiiv">
+          <text x="0" y="24" fontSize="22" fontWeight="700" fontFamily="Inter, sans-serif" letterSpacing="-0.5">
+            BeeHiiv
+          </text>
+        </svg>
+      ),
+    },
+    {
+      name: "Kit",
+      svg: (
+        <svg viewBox="0 0 50 32" className="h-6 w-auto fill-current" aria-label="Kit">
+          <text x="0" y="24" fontSize="22" fontWeight="700" fontFamily="Inter, sans-serif" letterSpacing="-0.5">
+            Kit
           </text>
         </svg>
       ),
