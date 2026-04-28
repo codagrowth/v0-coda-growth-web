@@ -4,8 +4,8 @@ import { useState } from "react"
 import { useRouter } from "next/navigation"
 import { TrendingUp, Users, Zap } from "lucide-react"
 
-// WEBHOOK URL - Replace with your Make webhook URL
-const WEBHOOK_URL = "MAKE_WEBHOOK_URL_HERE"
+// Make webhook URL for lead capture
+const WEBHOOK_URL = "https://hook.us2.make.com/8am4f1ocd1wfijhlr668dvphvae2rvvi"
 
 export function HeroSection() {
   const router = useRouter()
@@ -29,37 +29,29 @@ export function HeroSection() {
       return
     }
 
-    console.log("[v0] Form submitted with:", { name, email })
-
     try {
-      // Only call webhook if URL is configured
-      if (WEBHOOK_URL && WEBHOOK_URL !== "MAKE_WEBHOOK_URL_HERE") {
-        const response = await fetch(WEBHOOK_URL, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            name,
-            email,
-            website: honeypot,
-            source: "codagrowth.ai",
-          }),
-        })
+      const response = await fetch(WEBHOOK_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          website: honeypot,
+          source: "codagrowth.ai",
+        }),
+      })
 
-        if (!response.ok) {
-          throw new Error("Failed to submit form")
-        }
-      } else {
-        console.log("[v0] Webhook not configured, skipping API call")
+      if (!response.ok) {
+        throw new Error("Failed to submit form")
       }
 
       // Reset form and redirect to thank you page
       setName("")
       setEmail("")
       router.push("/thank-you")
-    } catch (err) {
-      console.log("[v0] Form submission error:", err)
+    } catch {
       setError("Something went wrong. Please try again.")
     } finally {
       setIsSubmitting(false)

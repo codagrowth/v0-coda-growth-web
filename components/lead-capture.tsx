@@ -4,8 +4,8 @@ import { useState } from "react"
 import { useRouter } from "next/navigation"
 import { ArrowRight, Gift, Zap, BarChart2, Users, CheckCircle2 } from "lucide-react"
 
-// WEBHOOK URL - Replace with your Make webhook URL
-const WEBHOOK_URL = "MAKE_WEBHOOK_URL_HERE"
+// Make webhook URL for lead capture
+const WEBHOOK_URL = "https://hook.us2.make.com/8am4f1ocd1wfijhlr668dvphvae2rvvi"
 
 const bonuses = [
   {
