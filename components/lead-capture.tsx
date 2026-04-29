@@ -51,19 +51,25 @@ export function LeadCapture() {
       return
     }
 
+    const payload = {
+      name,
+      email,
+      website: honeypot,
+      source: "codagrowth.ai",
+    }
+
+    console.log("Submitting to Make", payload)
+
     try {
       const response = await fetch(WEBHOOK_URL, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-          name,
-          email,
-          website: honeypot,
-          source: "codagrowth.ai",
-        }),
+        body: JSON.stringify(payload),
       })
+
+      console.log("Make response", response.status)
 
       if (!response.ok) {
         throw new Error("Failed to submit form")
@@ -74,7 +80,8 @@ export function LeadCapture() {
       setTimeout(() => {
         router.push("/thank-you")
       }, 1500)
-    } catch {
+    } catch (error) {
+      console.error(error)
       setError("Something went wrong. Please try again.")
     } finally {
       setIsSubmitting(false)

@@ -13,6 +13,7 @@ export function HeroSection() {
   const [email, setEmail] = useState("")
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [error, setError] = useState("")
+  const [success, setSuccess] = useState(false)
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -29,29 +30,37 @@ export function HeroSection() {
       return
     }
 
+    const payload = {
+      name,
+      email,
+      website: honeypot,
+      source: "codagrowth.ai",
+    }
+
+    console.log("Submitting to Make", payload)
+
     try {
       const response = await fetch(WEBHOOK_URL, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-          name,
-          email,
-          website: honeypot,
-          source: "codagrowth.ai",
-        }),
+        body: JSON.stringify(payload),
       })
+
+      console.log("Make response", response.status)
 
       if (!response.ok) {
         throw new Error("Failed to submit form")
       }
 
-      // Reset form and redirect to thank you page
-      setName("")
-      setEmail("")
-      router.push("/thank-you")
-    } catch {
+      // Show success state then redirect
+      setSuccess(true)
+      setTimeout(() => {
+        router.push("/thank-you")
+      }, 1500)
+    } catch (error) {
+      console.error(error)
       setError("Something went wrong. Please try again.")
     } finally {
       setIsSubmitting(false)
@@ -125,10 +134,10 @@ export function HeroSection() {
                 )}
                 <button
                   type="submit"
-                  disabled={isSubmitting}
+                  disabled={isSubmitting || success}
                   className="relative z-10 w-full rounded-lg bg-[#00D1C1] px-6 py-3.5 font-bold text-[#132A4A] hover:bg-[#04C3B3] transition-colors disabled:opacity-70 disabled:cursor-not-allowed cursor-pointer"
                 >
-                  {isSubmitting ? "Sending..." : "Get the Free Guide"}
+                  {success ? "Success, redirecting..." : isSubmitting ? "Sending..." : "Get the Free Guide"}
                 </button>
               </form>
 
