@@ -17,6 +17,7 @@ export function HeroSection() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
+    console.log("[v0] Form submit triggered")
     setError("")
     setIsSubmitting(true)
 
@@ -26,11 +27,12 @@ export function HeroSection() {
 
     // If honeypot is filled, silently reject (bot detected)
     if (honeypot) {
+      console.log("[v0] Honeypot filled, rejecting")
       setIsSubmitting(false)
       return
     }
 
-    console.log("Submitting to Make", { name, email, website: honeypot || "", source: "codagrowth.ai" })
+    console.log("[v0] Submitting to Make:", { name, email, source: "codagrowth.ai" })
 
     try {
       const formData = new FormData()
@@ -39,19 +41,23 @@ export function HeroSection() {
       formData.append("website", honeypot || "")
       formData.append("source", "codagrowth.ai")
 
+      console.log("[v0] Sending fetch to:", WEBHOOK_URL)
+      
       await fetch(WEBHOOK_URL, {
         method: "POST",
         body: formData,
         mode: "no-cors",
       })
 
+      console.log("[v0] Fetch completed, redirecting...")
+      
       // Show success state then redirect
       setSuccess(true)
       setTimeout(() => {
         router.push("/thank-you")
       }, 1500)
     } catch (error) {
-      console.error("Form submission error:", error)
+      console.error("[v0] Form submission error:", error)
       setError("Something went wrong. Please try again.")
       setIsSubmitting(false)
     }
