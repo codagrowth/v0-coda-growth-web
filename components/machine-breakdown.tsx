@@ -45,6 +45,7 @@ const services = [
       "Ongoing stack governance",
     ],
     accent: "#00D1C1",
+    url: "https://codagrowth.ai/go/beehiiv",
   },
 ]
 
