@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation"
 import { ArrowRight, Gift, Zap, BarChart2, Users, CheckCircle2 } from "lucide-react"
 
 // Make webhook URL for lead capture
-const WEBHOOK_URL = "https://hook.us2.make.com/8am4f1ocd1wfijhlr668dvphvae2rvvi"
+const WEBHOOK_URL = "https://hook.us2.make.com/8am4f1ocd1wfijhlr668dvphvae2rvv"
 
 const bonuses = [
   {
@@ -58,22 +58,19 @@ export function LeadCapture() {
       source: "codagrowth.ai",
     }
 
-    console.log("Submitting to Make", payload)
+    console.log("[v0] Submitting to Make", payload)
 
     try {
-      const response = await fetch(WEBHOOK_URL, {
+      await fetch(WEBHOOK_URL, {
         method: "POST",
+        mode: "no-cors",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(payload),
       })
 
-      console.log("Make response", response.status)
-
-      if (!response.ok) {
-        throw new Error("Failed to submit form")
-      }
+      console.log("[v0] Form submitted successfully")
 
       // Show success state briefly then redirect
       setSubmitted(true)
@@ -81,9 +78,8 @@ export function LeadCapture() {
         router.push("/thank-you")
       }, 1500)
     } catch (error) {
-      console.error(error)
+      console.error("[v0] Form submission error:", error)
       setError("Something went wrong. Please try again.")
-    } finally {
       setIsSubmitting(false)
     }
   }
