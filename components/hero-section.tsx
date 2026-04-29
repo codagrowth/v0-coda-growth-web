@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation"
 import { TrendingUp, Users, Zap } from "lucide-react"
 
 // Make webhook URL for lead capture
-const WEBHOOK_URL = "https://hook.us2.make.com/8am4f1ocd1wfijhlr668dvphvae2rvvi"
+const WEBHOOK_URL = "https://hook.us2.make.com/a6bcovllmy02zwl7vsdzhwc4lqm52fpk"
 
 export function HeroSection() {
   const router = useRouter()
