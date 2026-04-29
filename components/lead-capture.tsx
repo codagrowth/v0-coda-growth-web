@@ -42,8 +42,8 @@ export function LeadCapture() {
     setIsSubmitting(true)
 
     // Get honeypot value (spam prevention)
-    const formData = new FormData(e.currentTarget)
-    const honeypot = formData.get("website") as string
+    const formDataCheck = new FormData(e.currentTarget)
+    const honeypot = formDataCheck.get("website") as string
 
     // If honeypot is filled, silently reject (bot detected)
     if (honeypot) {
@@ -51,26 +51,20 @@ export function LeadCapture() {
       return
     }
 
-    const payload = {
-      name,
-      email,
-      website: honeypot,
-      source: "codagrowth.ai",
-    }
-
-    console.log("[v0] Submitting to Make", payload)
+    console.log("Submitting to Make", { name, email, website: honeypot || "", source: "codagrowth.ai" })
 
     try {
+      const formData = new FormData()
+      formData.append("name", name)
+      formData.append("email", email)
+      formData.append("website", honeypot || "")
+      formData.append("source", "codagrowth.ai")
+
       await fetch(WEBHOOK_URL, {
         method: "POST",
+        body: formData,
         mode: "no-cors",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(payload),
       })
-
-      console.log("[v0] Form submitted successfully")
 
       // Show success state briefly then redirect
       setSubmitted(true)
@@ -78,7 +72,7 @@ export function LeadCapture() {
         router.push("/thank-you")
       }, 1500)
     } catch (error) {
-      console.error("[v0] Form submission error:", error)
+      console.error("Form submission error:", error)
       setError("Something went wrong. Please try again.")
       setIsSubmitting(false)
     }
