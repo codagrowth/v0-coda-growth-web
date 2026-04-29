@@ -20,9 +20,12 @@ export const metadata: Metadata = {
   title: 'CODA GROWTH | AI Automation & B2B Efficiency & Automation Consultancy',
   description: 'Scale your Revenue Systems with AI & Automation. Get the free AI Marketing Guide and learn the systems top SaaS companies use to grow revenue on autopilot.',
   icons: {
-    icon: '/favicon.ico',
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/icon.png', type: 'image/png' },
+    ],
     shortcut: '/favicon.ico',
-    apple: '/favicon.ico',
+    apple: '/apple-icon.png',
   },
 }
 
