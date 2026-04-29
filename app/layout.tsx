@@ -19,23 +19,10 @@ const roboto = Roboto({
 export const metadata: Metadata = {
   title: 'CODA GROWTH | AI Automation & B2B Efficiency & Automation Consultancy',
   description: 'Scale your Revenue Systems with AI & Automation. Get the free AI Marketing Guide and learn the systems top SaaS companies use to grow revenue on autopilot.',
-  generator: 'v0.app',
   icons: {
-    icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
-    apple: '/apple-icon.png',
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/favicon.ico',
   },
 }
 
