@@ -68,7 +68,7 @@ export function HeroSection() {
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-8 items-center">
           {/* Left column: Lead capture card */}
-          <div className="flex justify-center lg:justify-start">
+          <div id="lead-form" className="flex justify-center lg:justify-start">
             <div
               className="relative w-full max-w-sm rounded-2xl border border-[#04C3B3]/40 bg-gradient-to-br from-[#1a3559] to-[#0f1f2e] p-8 shadow-2xl"
               style={{
