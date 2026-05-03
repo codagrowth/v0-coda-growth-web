@@ -14,6 +14,7 @@ const services = [
       "CRM sync & reporting",
     ],
     accent: "#32CEC0",
+    url: "https://codagrowth.ai/go/adcreative",
   },
   {
     icon: BarChart3,
@@ -29,6 +30,7 @@ const services = [
     ],
     accent: "#04C3B3",
     featured: true,
+    url: "https://codagrowth.ai/go/gohighlevel1",
   },
   {
     icon: Layers,
@@ -43,6 +45,7 @@ const services = [
       "Ongoing stack governance",
     ],
     accent: "#00D1C1",
+    url: "https://codagrowth.ai/go/beehiiv",
   },
 ]
 
@@ -70,14 +73,17 @@ export function MachineBreakdown() {
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
           {services.map((service) => {
             const Icon = service.icon
+            const CardWrapper = service.url ? "a" : "div"
+            const cardProps = service.url ? { href: service.url, target: "_blank", rel: "noopener noreferrer" } : {}
             return (
-              <div
+              <CardWrapper
                 key={service.title}
+                {...cardProps}
                 className={`group relative flex flex-col rounded-2xl border p-8 transition-all duration-300 hover:-translate-y-1 ${
                   service.featured
                     ? "border-[#04C3B3]/50 bg-[#1a3d6e] shadow-lg shadow-[#04C3B3]/10"
                     : "border-[#1e3f62] bg-[#1a3559] hover:border-[#32CEC0]/40"
-                }`}
+                } ${service.url ? "cursor-pointer" : ""}`}
               >
                 {service.featured && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2">
@@ -130,7 +136,7 @@ export function MachineBreakdown() {
                     </li>
                   ))}
                 </ul>
-              </div>
+              </CardWrapper>
             )
           })}
         </div>

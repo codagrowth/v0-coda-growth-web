@@ -33,7 +33,7 @@ export function Navbar() {
             Demo
           </a>
           <a
-            href="#guide"
+            href="#lead-form"
             className="inline-flex items-center justify-center rounded-lg bg-[#1a3d6e] px-5 py-2.5 text-sm font-semibold text-[#00D1C1] border border-[#00D1C1]/40 hover:bg-[#00D1C1] hover:text-[#132A4A] transition-all duration-200"
             style={{ fontFamily: "Inter, sans-serif" }}
           >
@@ -69,7 +69,7 @@ export function Navbar() {
             Demo
           </a>
           <a
-            href="#guide"
+            href="#lead-form"
             className="inline-flex items-center justify-center rounded-lg bg-[#00D1C1] px-5 py-2.5 text-sm font-semibold text-[#132A4A] hover:opacity-90 transition-opacity"
             onClick={() => setMobileOpen(false)}
           >

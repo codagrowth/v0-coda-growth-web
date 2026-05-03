@@ -12,9 +12,11 @@ export default function Home() {
       <Navbar />
       <HeroSection />
       <TrustBar />
-      <VideoDemo />
+      {/* VideoDemo temporarily hidden - uncomment to restore */}
+      {/* <VideoDemo /> */}
       <MachineBreakdown />
-      <LeadCapture />
+      {/* LeadCapture (3 bonuses section) temporarily hidden - uncomment to restore */}
+      {/* <LeadCapture /> */}
       <Footer />
     </main>
   )

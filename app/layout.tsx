@@ -19,22 +19,12 @@ const roboto = Roboto({
 export const metadata: Metadata = {
   title: 'CODA GROWTH | AI Automation & B2B Efficiency & Automation Consultancy',
   description: 'Scale your Revenue Systems with AI & Automation. Get the free AI Marketing Guide and learn the systems top SaaS companies use to grow revenue on autopilot.',
-  generator: 'v0.app',
   icons: {
     icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
+      { url: '/favicon.ico' },
+      { url: '/icon.png', type: 'image/png' },
     ],
+    shortcut: '/favicon.ico',
     apple: '/apple-icon.png',
   },
 }
@@ -46,6 +36,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/icon.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/icon.png" />
+      </head>
       <body className={`${inter.variable} ${roboto.variable} font-sans antialiased`}>
         {children}
         <Analytics />

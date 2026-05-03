@@ -1,7 +1,11 @@
 "use client"
 
 import { useState } from "react"
+import { useRouter } from "next/navigation"
 import { ArrowRight, Gift, Zap, BarChart2, Users, CheckCircle2 } from "lucide-react"
+
+// Make webhook URL for lead capture
+const WEBHOOK_URL = "https://hook.us2.make.com/a6bcovllmy02zwl7vsdzhwc4lqm52fpk"
 
 const bonuses = [
   {
@@ -25,12 +29,53 @@ const bonuses = [
 ]
 
 export function LeadCapture() {
+  const router = useRouter()
+  const [name, setName] = useState("")
   const [email, setEmail] = useState("")
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [error, setError] = useState("")
   const [submitted, setSubmitted] = useState(false)
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    if (email) setSubmitted(true)
+    setError("")
+    setIsSubmitting(true)
+
+    // Get honeypot value (spam prevention)
+    const formDataCheck = new FormData(e.currentTarget)
+    const honeypot = formDataCheck.get("website") as string
+
+    // If honeypot is filled, silently reject (bot detected)
+    if (honeypot) {
+      setIsSubmitting(false)
+      return
+    }
+
+    console.log("Submitting to Make", { name, email, website: honeypot || "", source: "codagrowth.ai" })
+
+    try {
+      const formData = new FormData()
+      formData.append("name", name)
+      formData.append("email", email)
+      formData.append("website", honeypot || "")
+      formData.append("source", "codagrowth.ai")
+
+      await fetch(WEBHOOK_URL, {
+        method: "POST",
+        body: formData,
+        mode: "no-cors",
+      })
+
+      // Show success state briefly then redirect
+      setSubmitted(true)
+      setTimeout(() => {
+        router.push("/thank-you")
+      }, 1500)
+    } catch (error) {
+      console.error("Form submission error:", error)
+      setError("Something went wrong. Please try again.")
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -110,6 +155,15 @@ export function LeadCapture() {
 
                 {!submitted ? (
                   <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+                    {/* Honeypot field for spam prevention - hidden from users */}
+                    <input
+                      type="text"
+                      name="website"
+                      tabIndex={-1}
+                      autoComplete="off"
+                      className="absolute opacity-0 pointer-events-none h-0 w-0"
+                      aria-hidden="true"
+                    />
                     <div className="flex flex-col gap-1">
                       <label className="text-xs font-medium text-[#BFE2DC]" htmlFor="lc-name">
                         First Name
@@ -117,8 +171,13 @@ export function LeadCapture() {
                       <input
                         id="lc-name"
                         type="text"
+                        name="name"
+                        required
                         placeholder="Your first name"
-                        className="w-full rounded-lg border border-[#1e3f62] bg-[#132A4A] px-4 py-3 text-sm text-[#F5F7FA] placeholder:text-[#BFE2DC]/40 focus:outline-none focus:border-[#FF6B35] focus:ring-1 focus:ring-[#FF6B35] transition-colors"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        disabled={isSubmitting}
+                        className="w-full rounded-lg border border-[#1e3f62] bg-[#132A4A] px-4 py-3 text-sm text-[#F5F7FA] placeholder:text-[#BFE2DC]/40 focus:outline-none focus:border-[#FF6B35] focus:ring-1 focus:ring-[#FF6B35] transition-colors disabled:opacity-60"
                       />
                     </div>
                     <div className="flex flex-col gap-1">
@@ -128,23 +187,29 @@ export function LeadCapture() {
                       <input
                         id="lc-email"
                         type="email"
+                        name="email"
                         required
                         placeholder="you@company.com"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
-                        className="w-full rounded-lg border border-[#1e3f62] bg-[#132A4A] px-4 py-3 text-sm text-[#F5F7FA] placeholder:text-[#BFE2DC]/40 focus:outline-none focus:border-[#FF6B35] focus:ring-1 focus:ring-[#FF6B35] transition-colors"
+                        disabled={isSubmitting}
+                        className="w-full rounded-lg border border-[#1e3f62] bg-[#132A4A] px-4 py-3 text-sm text-[#F5F7FA] placeholder:text-[#BFE2DC]/40 focus:outline-none focus:border-[#FF6B35] focus:ring-1 focus:ring-[#FF6B35] transition-colors disabled:opacity-60"
                       />
                     </div>
+                    {error && (
+                      <p className="text-xs text-red-400 text-center">{error}</p>
+                    )}
                     <button
                       type="submit"
-                      className="group mt-1 flex w-full items-center justify-center gap-2 rounded-lg bg-[#FF6B35] px-6 py-4 text-sm font-bold text-white hover:bg-[#e55a27] active:scale-[0.98] transition-all duration-150"
+                      disabled={isSubmitting}
+                      className="group mt-1 flex w-full items-center justify-center gap-2 rounded-lg bg-[#FF6B35] px-6 py-4 text-sm font-bold text-white hover:bg-[#e55a27] active:scale-[0.98] transition-all duration-150 disabled:opacity-70 disabled:cursor-not-allowed"
                       style={{ fontFamily: "Inter, sans-serif" }}
                     >
-                      Claim Free Guide + Bonuses
-                      <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                      {isSubmitting ? "Sending..." : "Claim Free Guide + Bonuses"}
+                      {!isSubmitting && <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />}
                     </button>
                     <p className="text-center text-xs text-[#BFE2DC]/50">
-                      No credit card. No spam. Instant access.
+                      No spam. Just the guide + actionable insights.
                     </p>
                   </form>
                 ) : (
